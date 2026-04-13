@@ -13,6 +13,7 @@ const initSocket = (server) => {
     });
     io.on("connect", (socket) => {
         console.log("🟢 User connected:", socket.id);
+        io.emit("backend-connect", "HEY BRO AMI BACKEND");
         (0, events_1.socketEvents)(socket, io);
         socket.on("disconnect", () => {
             console.log("🔴 User disconnected:", socket.id);
