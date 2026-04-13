@@ -14,7 +14,7 @@ export const initSocket = (server: HttpServer) => {
 
   io.on("connect", (socket) => {
     console.log("🟢 User connected:", socket.id);
-    io.emit("connect", "HEY BRO AMI BACKEND");
+    io.emit("backend-connect", "HEY BRO AMI BACKEND");
     socketEvents(socket, io);
     socket.on("disconnect", () => {
       console.log("🔴 User disconnected:", socket.id);
