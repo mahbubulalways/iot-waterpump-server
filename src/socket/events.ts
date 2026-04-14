@@ -55,6 +55,13 @@ export async function socketEvents(socket: Socket, io: Server) {
     console.log("Manual motor state:", MANUAL_MOTOR_STATE);
   });
 
+  socket.emit("live-info", {
+    soilMoisture: 95,
+    temperature: 30,
+    humidity: 70,
+    waterLevel: 60,
+  });
+
   //   SENSOR DATA STREAM
   socket.on("sensor-info", async (data: ESP_32_INFO) => {
     CURRENT_SENSOR = data;
