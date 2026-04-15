@@ -10,6 +10,7 @@ const initSocket = (server) => {
             origin: "*",
             methods: ["GET", "POST"],
         },
+        transports: ["websocket", "polling"],
     });
     io.on("connect", (socket) => {
         console.log("🟢 User connected:", socket.id);
