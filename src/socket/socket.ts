@@ -10,6 +10,7 @@ export const initSocket = (server: HttpServer) => {
       origin: "*",
       methods: ["GET", "POST"],
     },
+    transports: ["websocket", "polling"],
   });
 
   io.on("connect", (socket) => {
