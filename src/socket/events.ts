@@ -65,7 +65,7 @@ export async function socketEvents(socket: Socket, io: Server) {
   //   SENSOR DATA STREAM
   socket.on("sensor-info", async (data: ESP_32_INFO) => {
     CURRENT_SENSOR = data;
-    io.emit("live-info", data);
+    io.emit("live-info2", data);
 
     //  AUTO MODE_________________________________________________
     if (MOTOR_MODE === "AUTO") {

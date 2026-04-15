@@ -52,7 +52,7 @@ async function socketEvents(socket, io) {
     //   SENSOR DATA STREAM
     socket.on("sensor-info", async (data) => {
         CURRENT_SENSOR = data;
-        io.emit("live-info", data);
+        io.emit("live-info2", data);
         //  AUTO MODE_________________________________________________
         if (MOTOR_MODE === "AUTO") {
             // START MOTOR
