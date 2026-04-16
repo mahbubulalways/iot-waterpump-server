@@ -10,10 +10,10 @@ const initSocket = (server) => {
             origin: "*",
             methods: ["GET", "POST"],
         },
-        transports: ["websocket"],
+        transports: ["websocket", "polling"], // FIX
         allowEIO3: true,
     });
-    io.on("connect", (socket) => {
+    io.on("connection", (socket) => {
         console.log("🟢 User connected:", socket.id);
         io.emit("backend-connect", "HEY BRO AMI BACKEND");
         (0, events_1.socketEvents)(socket, io);
