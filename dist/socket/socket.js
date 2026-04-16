@@ -10,7 +10,8 @@ const initSocket = (server) => {
             origin: "*",
             methods: ["GET", "POST"],
         },
-        transports: ["websocket", "polling"],
+        transports: ["websocket"],
+        allowEIO3: true,
     });
     io.on("connect", (socket) => {
         console.log("🟢 User connected:", socket.id);
